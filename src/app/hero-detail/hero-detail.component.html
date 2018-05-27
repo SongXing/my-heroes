@@ -1,0 +1,20 @@
+<div *ngIf="hero">
+
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div>
+    <span>id: </span> {{hero.id}}
+  </div>
+  <div>
+    <!-- <span>name: </span> {{hero.name}} -->
+    <!-- 名字交互 -->
+    <label>name:
+      <!-- [(ngModel)] 是 Angular 的双向数据绑定语句
+          ngModel 是 Angular 指令，在默认情况下是不可用的
+          它属于一个可选模块 FormsModule， 需要自行添加此模块可以使用该指令
+      -->
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </label>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>
